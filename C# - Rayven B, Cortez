@@ -1,0 +1,103 @@
+using System;
+
+class Program
+{
+    static void LegalAgeIdentifier()
+    {
+        Console.Write("lang taon kana?: ");
+        int age = int.Parse(Console.ReadLine());
+
+        if (age >= 18)
+        {
+            Console.WriteLine("pwede na, legal kana haha");
+        }
+        else
+        {
+            Console.WriteLine("ang bata mo pa, batukan kita e");
+        }
+    }
+
+    static void RandomNumberGenerator()
+    {
+        Random r = new Random();
+        int num = r.Next(1, 101);
+        Console.WriteLine("oh eto na random number mo: " + num);
+    }
+
+    static void SimpleCalculator()
+    {
+        Console.Write("bigay ka number: ");
+        double n1 = double.Parse(Console.ReadLine());
+        Console.Write("anong gagawen jan (+,-,*,/): ");
+        char op = char.Parse(Console.ReadLine());
+        Console.Write("bigay ka isa pang number: ");
+        double n2 = double.Parse(Console.ReadLine());
+
+        if (op == '+')
+        {
+            Console.WriteLine("oh eto na, panis ambilis noh? : " + (n1 + n2));
+        }
+        else if (op == '-')
+        {
+            Console.WriteLine("bagang, eto na agad : " + (n1 - n2));
+        }
+        else if (op == '*')
+        {
+            Console.WriteLine("ayan na, bilis noh? : " + (n1 * n2));
+        }
+        else if (op == '/')
+        {
+            if (n2 != 0)
+                Console.WriteLine("ang imong resulta ay: " + (n1 / n2));
+            else
+                Console.WriteLine("hoy nag aral ka ba, bawal mag divide by 0");
+        }
+        else
+        {
+            Console.WriteLine("magbasa ka nga maigi, bawal yang operator mo");
+        }
+    }
+
+    static void GradingSystem()
+    {
+        Console.Write("anong general average mo? : ");
+        int g = int.Parse(Console.ReadLine());
+
+        if (g >= 95) 
+            Console.WriteLine("PALDO PALDO AH?? dahil jan with high honor ka dong");
+        else if (g >= 90)
+            Console.WriteLine("PALDOOOOOO, with honor ka bosingg");
+        else if (g >= 85)
+            Console.WriteLine("pwede na, kaya yan i with honor wag lang tamarin");
+        else if (g >= 75)
+            Console.WriteLine("nyek, pero okay na yan, atleast pasado noh?");
+        else
+            Console.WriteLine("HAHAHAHAHA BAGSAK AMP");
+    }
+
+    static void Main(string[] args)
+    {
+        int choice = 0;
+        do
+        {
+            Console.WriteLine("kamusta dong?");
+            Console.WriteLine("ito ang aking tagalog working code");
+            Console.WriteLine("pili ka lang ng gusto mong makita");
+            Console.WriteLine("Legal Age Identifier? input mo (1)");
+            Console.WriteLine("Random Number Generator? input mo (2)");
+            Console.WriteLine("Simple Calculator? input mo (3)");
+            Console.WriteLine("Grading System? just pick (4)");
+            Console.WriteLine("kung ayaw mo makita, edi wag (5)");
+            Console.Write("ano napili mo? pakibilisan: ");
+            choice = int.Parse(Console.ReadLine());
+
+            if (choice == 1) LegalAgeIdentifier();
+            else if (choice == 2) RandomNumberGenerator();
+            else if (choice == 3) SimpleCalculator();
+            else if (choice == 4) GradingSystem();
+            else if (choice == 5) Console.WriteLine("paalam sa imo, dong");
+            else Console.WriteLine("ha?? patawa ka ba 1-5 nga lang e, tadyakan ko ulo mo");
+        }
+        while (choice != 5);
+    }
+}
